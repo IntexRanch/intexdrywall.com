@@ -5,9 +5,9 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Intex Drywall | Commercial Drywall & Metal Stud Framing",
+  title: "Commercial Drywall & Metal Framing Contractor | Intex Drywall | Central NC",
   description:
-    "Intex Drywall is a commercial drywall and metal stud framing contractor serving office, healthcare, education, industrial, hospitality, and municipal projects.",
+    "Intex Drywall is a commercial drywall and metal framing contractor based in Pittsboro, NC serving Central North Carolina. Specializing in metal stud framing, drywall systems, fire-rated assemblies, and tenant improvements for healthcare, education, office, industrial, and municipal projects.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

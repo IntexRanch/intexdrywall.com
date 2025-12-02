@@ -57,37 +57,63 @@ export default function AboutPage() {
       <Section>
         <div className="grid gap-8 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] items-start">
           <div className="space-y-6">
-            <section className="space-y-2">
+            <section className="space-y-3">
               <h2 className="text-xl font-semibold text-slate-900">
                 Who We Are
               </h2>
               <p className="text-sm text-slate-700">
-                Intex Drywall was founded on the belief that commercial drywall
-                and framing work should be predictable, professional, and easy
-                to coordinate. We&apos;ve grown by delivering on that promise
-                project after project, building strong relationships with repeat
-                GCs and owners.
+                Intex Drywall is a commercial drywall and metal framing contractor headquartered at 145 Penny Lane, Pittsboro, North Carolina 27312, serving Central North Carolina and surrounding markets. The company specializes exclusively in commercial interior and light exterior framing and drywall systems, partnering with general contractors, construction managers, and building owners to deliver high-quality, schedule-driven construction solutions across a wide range of project types.
               </p>
               <p className="text-sm text-slate-700">
-                Today, our crews deliver work on hospitals, schools, office
-                towers, industrial facilities, hotels, and public projects. We
-                scale our manpower, supervision, and prefabrication options to
-                match the demands of each project&apos;s schedule and
-                complexity.
+                Founded on the principles of reliability, craftsmanship, safety, and accountability, Intex Drywall has built its reputation by focusing on what matters most to commercial construction teams: predictable performance in the field, clear communication, and consistent quality from mobilization through final punch-out. The company understands that drywall and framing scopes often sit directly on the critical path of a project, and its operational systems are designed to support aggressive schedules without sacrificing safety or workmanship.
               </p>
             </section>
 
-            <section className="space-y-2">
+            <section className="space-y-3">
               <h3 className="text-lg font-semibold text-slate-900">
-                Geographic Service Area
+                Services & Capabilities
               </h3>
               <p className="text-sm text-slate-700">
-                We primarily serve commercial projects across{" "}
-                <span className="font-semibold">
-                  the Carolinas and the surrounding Southeast
-                </span>
-                . For the right projects and partners, we will consider work
-                outside our core area.
+                Intex Drywall provides a full range of commercial drywall and metal framing services, including interior non-structural metal stud framing, exterior cold-formed steel backup framing, gypsum board systems, shaft walls, fire-rated assemblies, acoustical and sound-rated wall systems, and fast-track tenant improvement build-outs. The company&apos;s crews are experienced in constructing demising walls, corridor systems, soffits, bulkheads, mechanical and electrical chases, elevator and stair shafts, specialty assemblies, and high-finish interiors requiring Level 4 and Level 5 finishes. Intex works closely with project teams to ensure that framing layouts, wall types, and finish requirements are fully coordinated with architectural, structural, and MEP systems.
+              </p>
+            </section>
+
+            <section className="space-y-3">
+              <h3 className="text-lg font-semibold text-slate-900">
+                Markets We Serve
+              </h3>
+              <p className="text-sm text-slate-700">
+                The company serves a broad mix of commercial markets across Central North Carolina, including healthcare, education, corporate and office, industrial and manufacturing, hospitality, retail and mixed-use, and municipal and public sector projects. From medical office buildings and hospitals to K-12 schools, higher-education facilities, office towers, industrial expansions, hotels, and public buildings, Intex Drywall brings market-specific knowledge and disciplined execution to each assignment. The company is especially adept at working in occupied and phased construction environments, where coordination, cleanliness, and schedule control are critical to project success.
+              </p>
+            </section>
+
+            <section className="space-y-3">
+              <h3 className="text-lg font-semibold text-slate-900">
+                Safety & Field Operations
+              </h3>
+              <p className="text-sm text-slate-700">
+                Safety is a core operational priority at Intex Drywall. The company maintains a structured safety program supported by ongoing training, daily job hazard analyses, toolbox talks, and active field supervision. Safety planning is integrated into scheduling and preconstruction to identify high-risk activities early and to protect workers, building occupants, and surrounding trades. Intex partners closely with general contractors to align with project-specific safety requirements and owner programs, recognizing that a strong safety culture is essential to long-term project performance and workforce stability.
+              </p>
+            </section>
+
+            <section className="space-y-3">
+              <h3 className="text-lg font-semibold text-slate-900">
+                Preconstruction & Communication
+              </h3>
+              <p className="text-sm text-slate-700">
+                Intex Drywall also places a strong emphasis on preconstruction collaboration and field communication. Estimating and operations teams work together to provide accurate takeoffs, detailed scope clarifications, and constructability feedback that supports informed decision-making during procurement. Once in the field, experienced foremen and supervisors manage manpower, sequencing, and material logistics to keep production steady and predictable. Transparent communication with general contractors and project managers ensures that issues are addressed early, reducing rework and protecting overall project timelines.
+              </p>
+            </section>
+
+            <section className="space-y-3">
+              <h3 className="text-lg font-semibold text-slate-900">
+                Our Commitment
+              </h3>
+              <p className="text-sm text-slate-700">
+                As a locally based contractor, Intex Drywall takes pride in serving Central North Carolina with a hands-on, relationship-driven approach. The company&apos;s growth is built on repeat business and long-standing partnerships with general contractors who value dependable performance and responsive service. Whether supporting large ground-up commercial developments or fast-paced interior renovations, Intex brings the same level of commitment to quality, safety, and professionalism to every project.
+              </p>
+              <p className="text-sm text-slate-700">
+                Today, Intex Drywall continues to expand its capabilities while staying true to its core mission: to be a trusted commercial drywall and metal framing partner that delivers consistent results, supports project teams, and contributes to safe, efficient, and successful construction outcomes across Central North Carolina.
               </p>
             </section>
           </div>

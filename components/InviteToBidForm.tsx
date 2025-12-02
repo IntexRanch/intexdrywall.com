@@ -60,7 +60,7 @@ export function InviteToBidForm() {
     const body = encodeURIComponent(bodyLines.join("\n"));
 
     // Open the user's email client with a prefilled message.
-    window.location.href = `mailto:bids@intexdrywall.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:gdelgado@intexdrywalls.com?subject=${subject}&body=${body}`;
 
     setFormState("success");
     form.reset();
