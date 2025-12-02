@@ -3,19 +3,9 @@ import { ButtonLink } from "@/components/Button";
 
 const leadership = [
   {
-    name: "John Smith",
+    name: "Guillermo Montoya",
     title: "President",
     bio: "Over 25 years of experience leading commercial drywall and framing projects across healthcare, education, industrial, and corporate markets.",
-  },
-  {
-    name: "Maria Lopez",
-    title: "Operations Manager",
-    bio: "Specializes in field operations, manpower planning, and schedule coordination for fast-track and multi-phase projects.",
-  },
-  {
-    name: "Derrick Johnson",
-    title: "Preconstruction Manager",
-    bio: "Leads estimating and preconstruction support, working closely with GCs to clarify scope, alternates, and constructability.",
   },
 ];
 
