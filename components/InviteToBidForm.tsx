@@ -25,28 +25,45 @@ export function InviteToBidForm() {
       return;
     }
 
-    const payload = Object.fromEntries(formData.entries());
+    // Build a mailto link so this works on static hosting (no API needed).
+    const entries = Object.fromEntries(formData.entries());
+    const name = (entries.name as string) || "";
+    const company = (entries.company as string) || "";
+    const email = (entries.email as string) || "";
+    const phone = (entries.phone as string) || "";
+    const projectName = (entries.projectName as string) || "";
+    const projectLocation = (entries.projectLocation as string) || "";
+    const bidDueDate = (entries.bidDueDate as string) || "";
+    const scopeDescription = (entries.scopeDescription as string) || "";
+    const plansLink = (entries.plansLink as string) || "";
 
-    try {
-      const res = await fetch("/api/invite-to-bid", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
+    const subject = encodeURIComponent(
+      `Invite to Bid – ${projectName || "New Project"}`
+    );
 
-      if (!res.ok) {
-        throw new Error("Request failed");
-      }
+    const bodyLines = [
+      `Name: ${name}`,
+      `Company: ${company}`,
+      `Email: ${email}`,
+      phone ? `Phone: ${phone}` : "",
+      projectName ? `Project Name: ${projectName}` : "",
+      projectLocation ? `Project Location: ${projectLocation}` : "",
+      bidDueDate ? `Bid Due Date: ${bidDueDate}` : "",
+      "",
+      "Scope Description:",
+      scopeDescription || "(not provided)",
+      "",
+      "Plans / Specs Link:",
+      plansLink || "(not provided)",
+    ].filter(Boolean);
 
-      setFormState("success");
-      form.reset();
-    } catch (err) {
-      console.error(err);
-      setErrorMessage(
-        "There was a problem submitting your request. Please try again."
-      );
-      setFormState("error");
-    }
+    const body = encodeURIComponent(bodyLines.join("\n"));
+
+    // Open the user's email client with a prefilled message.
+    window.location.href = `mailto:bids@intexdrywall.com?subject=${subject}&body=${body}`;
+
+    setFormState("success");
+    form.reset();
   }
 
   return (
