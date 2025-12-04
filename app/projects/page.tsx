@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { Suspense, useMemo, useState } from "react";
 import { Section } from "@/components/Section";
 import { markets } from "@/lib/markets";
 import { projects } from "@/lib/projects";
@@ -9,6 +9,27 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { useSearchParams, useRouter } from "next/navigation";
 
 export default function ProjectsPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="bg-slate-900 text-white">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+            <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight">
+              Project Portfolio
+            </h1>
+            <p className="mt-4 text-sm sm:text-base text-slate-200">
+              Loading projects...
+            </p>
+          </div>
+        </div>
+      }
+    >
+      <ProjectsPageContent />
+    </Suspense>
+  );
+}
+
+function ProjectsPageContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
 

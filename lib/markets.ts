@@ -53,6 +53,6 @@ export const markets: Market[] = [
     name: "Government / Municipal",
     slug: "government-municipal",
     description:
-      "Courthouses, municipal buildings, public safety facilities, and other government projects with enhanced security and documentation.",
+      "Courthouses, municipal buildings, public safety facilities, and North Carolina government projects with enhanced security and documentation.",
   },
 ];
