@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { ReactNode } from "react";
 import { Header } from "@/components/Header";
@@ -13,6 +14,21 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-ZG72WTEP6E"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-ZG72WTEP6E');
+          `}
+        </Script>
+      </head>
       <body className="min-h-screen flex flex-col bg-slate-50 text-slate-900">
         <Header />
         <main className="flex-1">{children}</main>
