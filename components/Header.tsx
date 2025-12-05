@@ -24,7 +24,7 @@ export function Header() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/mainlogo.png"
+            src="/tealLogo.png"
             alt="Intex Drywall Logo"
             width={120}
             height={40}
