@@ -6,7 +6,7 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-6 text-sm text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-4">
           <Image
-            src="/tealLogo.png"
+            src="/mainlogo.png"
             alt="Intex Drywall Logo"
             width={110}
             height={37}
