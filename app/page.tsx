@@ -63,8 +63,10 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
           <div className="max-w-3xl space-y-6">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
-              Intex Drywall – Commercial Drywall &amp; Metal Stud Framing
-              Contractors
+              <span>Intex Drywall</span>
+              <span className="block">
+                Commercial Drywall &amp; Metal Stud Framing Contractors
+              </span>
             </h1>
             <p className="text-base sm:text-lg text-slate-200">
               We partner with general contractors and owners to deliver
