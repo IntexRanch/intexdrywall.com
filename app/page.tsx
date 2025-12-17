@@ -65,7 +65,8 @@ export default function HomePage() {
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
               <span>Intex Drywall</span>
               <span className="block">
-                Commercial Drywall &amp; Metal Stud Framing Contractors
+                Drywall and Framing Contractors for both Commercial and
+                Residential Projects
               </span>
             </h1>
             <p className="text-base sm:text-lg text-slate-200">
