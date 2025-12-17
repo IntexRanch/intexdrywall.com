@@ -77,7 +77,13 @@ export default function HomePage() {
                 href="/services/drywall-metal-stud-framing"
                 variant="secondary"
               >
-                View Services
+                Commercial Services
+              </ButtonLink>
+              <ButtonLink
+                href="/services/residential-drywall-framing"
+                variant="ghost"
+              >
+                Residential Services
               </ButtonLink>
             </div>
           </div>

@@ -7,7 +7,11 @@ import { useState } from "react";
 
 const navItems = [
   { href: "/", label: "Home" },
-  { href: "/services/drywall-metal-stud-framing", label: "Services" },
+  { href: "/services/drywall-metal-stud-framing", label: "Commercial Services" },
+  {
+    href: "/services/residential-drywall-framing",
+    label: "Residential Services",
+  },
   { href: "/markets", label: "Markets" },
   { href: "/projects", label: "Projects" },
   { href: "/safety-credentials", label: "Safety" },
@@ -26,9 +30,9 @@ export function Header() {
           <Image
             src="/tealLogo.png"
             alt="Intex Drywall Logo"
-            width={120}
-            height={40}
-            className="h-10 w-auto"
+            width={180}
+            height={60}
+            className="h-12 w-auto"
             priority
           />
         </Link>

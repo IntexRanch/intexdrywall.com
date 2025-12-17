@@ -35,7 +35,7 @@ export default function InviteToBidPage() {
                 gdelgado@intexdrywalls.com
               </p>
               <p className="mt-1">
-                Office: <span className="font-medium">(919) 464-0185</span>
+                Office: <span className="font-medium">(919) 391-0325</span>
               </p>
             </div>
 

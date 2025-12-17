@@ -8,9 +8,9 @@ export function Footer() {
           <Image
             src="/tealLogo.png"
             alt="Intex Drywall Logo"
-            width={80}
-            height={27}
-            className="h-6 w-auto"
+            width={110}
+            height={37}
+            className="h-8 w-auto"
           />
           <p>
             &copy; {new Date().getFullYear()} Intex Drywall. All rights reserved.
