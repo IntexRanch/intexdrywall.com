@@ -9,33 +9,16 @@ export function InviteToBidForm() {
   const [formState, setFormState] = useState<FormState>("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setFormState("submitting");
-    setErrorMessage(null);
-
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-
-    // Honeypot field (should be left empty by real users)
-    const honey = formData.get("company_website") as string;
-    if (honey && honey.trim().length > 0) {
-      // Likely spam
-      setFormState("idle");
-      return;
-    }
-
-    // Build a mailto link so this works on static hosting (no API needed).
-    const entries = Object.fromEntries(formData.entries());
-    const name = (entries.name as string) || "";
-    const company = (entries.company as string) || "";
-    const email = (entries.email as string) || "";
-    const phone = (entries.phone as string) || "";
-    const projectName = (entries.projectName as string) || "";
-    const projectLocation = (entries.projectLocation as string) || "";
-    const bidDueDate = (entries.bidDueDate as string) || "";
-    const scopeDescription = (entries.scopeDescription as string) || "";
-    const plansLink = (entries.plansLink as string) || "";
+  function buildMailtoLink(values: Record<string, FormDataEntryValue>) {
+    const name = (values.name as string) || "";
+    const company = (values.company as string) || "";
+    const email = (values.email as string) || "";
+    const phone = (values.phone as string) || "";
+    const projectName = (values.projectName as string) || "";
+    const projectLocation = (values.projectLocation as string) || "";
+    const bidDueDate = (values.bidDueDate as string) || "";
+    const scopeDescription = (values.scopeDescription as string) || "";
+    const plansLink = (values.plansLink as string) || "";
 
     const subject = encodeURIComponent(
       `Invite to Bid – ${projectName || "New Project"}`
@@ -59,11 +42,52 @@ export function InviteToBidForm() {
 
     const body = encodeURIComponent(bodyLines.join("\n"));
 
-    // Open the user's email client with a prefilled message.
-    window.location.href = `mailto:gdelgado@intexdrywalls.com?subject=${subject}&body=${body}`;
+    return `mailto:intexranch@gmail.com?subject=${subject}&body=${body}`;
+  }
 
-    setFormState("success");
-    form.reset();
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setFormState("submitting");
+    setErrorMessage(null);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    // Honeypot field (should be left empty by real users)
+    const honey = formData.get("company_website") as string;
+    if (honey && honey.trim().length > 0) {
+      // Likely spam
+      setFormState("idle");
+      return;
+    }
+
+    // Build a mailto link so this works on static hosting (no API needed).
+    const entries = Object.fromEntries(formData.entries());
+    const mailtoLink = buildMailtoLink(entries);
+
+    try {
+      const res = await fetch("/api/invite", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(entries),
+      });
+
+      if (!res.ok) {
+        throw new Error("Request failed");
+      }
+
+      setFormState("success");
+      form.reset();
+    } catch (err) {
+      // Fall back to mailto so the user can still send the invite.
+      window.location.href = mailtoLink;
+      setFormState("error");
+      setErrorMessage(
+        "We could not send the invite automatically. Your email app should open instead."
+      );
+    }
   }
 
   return (
