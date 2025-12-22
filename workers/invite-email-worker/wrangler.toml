@@ -1,0 +1,15 @@
+name = "intexdrywall-invite-email"
+main = "src/index.js"
+compatibility_date = "2025-12-22"
+
+# Sends only to a destination address that you've VERIFIED in Email Routing.
+send_email = [
+  { name = "FORM_EMAIL", destination_address = "intexranch@gmail.com" }
+]
+
+# Optional: uncomment if you want wrangler to bind this worker directly to your domain.
+# (You can also add routes in the Cloudflare dashboard instead.)
+# routes = [
+#   { pattern = "intexdrywall.com/api/invite", zone_name = "intexdrywall.com" },
+#   { pattern = "www.intexdrywall.com/api/invite", zone_name = "intexdrywall.com" }
+# ]
