@@ -8,9 +8,6 @@
     "dev": "wrangler dev src/index.js",
     "deploy": "wrangler deploy src/index.js"
   },
-  "dependencies": {
-    "mimetext": "^1.2.4"
-  },
   "devDependencies": {
     "wrangler": "^3.87.0"
   }

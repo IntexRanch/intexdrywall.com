@@ -1,5 +1,4 @@
 import { EmailMessage } from "cloudflare:email";
-import { createMimeMessage } from "mimetext";
 
 const TO_ADDRESS = "intexranch@gmail.com";
 const FROM_ADDRESS = "forms@intexdrywall.com"; // must be on your domain
@@ -49,6 +48,20 @@ function buildBody(values) {
 function subjectFor(values) {
   const projectName = asString(values.projectName).trim();
   return `Invite to Bid – ${projectName || "New Project"}`;
+}
+
+function buildMime({ from, to, subject, body, replyTo }) {
+  const headers = [
+    `From: ${from}`,
+    `To: ${to}`,
+    `Subject: ${subject}`,
+    replyTo ? `Reply-To: ${replyTo}` : "",
+    'Content-Type: text/plain; charset="UTF-8"',
+    "MIME-Version: 1.0",
+    "",
+  ].filter(Boolean);
+
+  return headers.join("\n") + body;
 }
 
 function corsHeaders(origin) {
@@ -110,19 +123,15 @@ export default {
     const subject = subjectFor(values);
     const body = buildBody(values);
 
-    // Build MIME message (Cloudflare docs use EmailMessage + mimetext)
-    const msg = createMimeMessage();
-    msg.setSender({ name: "intexdrywall.com", addr: FROM_ADDRESS });
-    msg.setRecipient(TO_ADDRESS);
-    msg.setSubject(subject);
-    msg.addMessage({ contentType: "text/plain", data: body });
+    const rawMime = buildMime({
+      from: FROM_ADDRESS,
+      to: TO_ADDRESS,
+      subject,
+      body: `\n${body}`,
+      replyTo: email.includes("@") ? email : "",
+    });
 
-    // Reply-To = submitter
-    if (email.includes("@")) {
-      msg.headers.set("Reply-To", email);
-    }
-
-    const message = new EmailMessage(FROM_ADDRESS, TO_ADDRESS, msg.asRaw());
+    const message = new EmailMessage(FROM_ADDRESS, TO_ADDRESS, rawMime);
 
     try {
       await env.FORM_EMAIL.send(message);
