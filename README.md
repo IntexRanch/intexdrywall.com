@@ -27,8 +27,6 @@ This reads `content/content.csv` and writes `content/generated.json`.
 - If you add new sections or fields, keep the naming consistent so the export script can pick them up.
 
 ## Invite to Bid form email setup
-- The Invite to Bid form posts to `/api/invite` and sends an email via Cloudflare’s built-in MailChannels endpoint to `intexranch@gmail.com` (configurable).
-- Configure environment variables (see `.env.example`):
-  - `INVITE_TO_ADDRESS` — where to deliver submissions.
-  - `MAILCHANNELS_FROM_ADDRESS` — a verified/authorized sender on your domain (SPF/DKIM aligned).
-- On failure (e.g., network or MailChannels rejection), the form falls back to opening the user’s email client with a prefilled message so the lead is not lost.
+- The Invite to Bid form posts to a Cloudflare Worker at `/api/invite` that uses Email Routing (`send_email` binding) to forward submissions to `intexranch@gmail.com`.
+- Configure the worker in `workers/invite-email-worker` and bind it to your domain’s `/api/invite` route (or set `NEXT_PUBLIC_INVITE_ENDPOINT` to the worker URL).
+- On failure (e.g., network issues), the form falls back to opening the user’s email client with a prefilled message so the lead is not lost.

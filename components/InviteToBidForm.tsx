@@ -5,6 +5,9 @@ import { Button } from "./Button";
 
 type FormState = "idle" | "submitting" | "success" | "error";
 
+const INVITE_ENDPOINT =
+  process.env.NEXT_PUBLIC_INVITE_ENDPOINT || "/api/invite";
+
 export function InviteToBidForm() {
   const [formState, setFormState] = useState<FormState>("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -12,6 +15,7 @@ export function InviteToBidForm() {
   function buildMailtoLink(values: Record<string, FormDataEntryValue>) {
     const name = (values.name as string) || "";
     const company = (values.company as string) || "";
+    const role = (values.role as string) || "";
     const email = (values.email as string) || "";
     const phone = (values.phone as string) || "";
     const projectName = (values.projectName as string) || "";
@@ -27,6 +31,7 @@ export function InviteToBidForm() {
     const bodyLines = [
       `Name: ${name}`,
       `Company: ${company}`,
+      role ? `Role: ${role}` : "",
       `Email: ${email}`,
       phone ? `Phone: ${phone}` : "",
       projectName ? `Project Name: ${projectName}` : "",
@@ -66,7 +71,7 @@ export function InviteToBidForm() {
     const mailtoLink = buildMailtoLink(entries);
 
     try {
-      const res = await fetch("/api/invite", {
+      const res = await fetch(INVITE_ENDPOINT, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
