@@ -7,7 +7,7 @@ Receives POST JSON at /api/invite and forwards the submission to intexranch@gmai
 2) Add Destination address: intexranch@gmail.com and VERIFY it
 
 ## Run locally
-npm install
+npm install   # installs wrangler (no app runtime deps)
 npm run dev
 
 ## Deploy

@@ -5,7 +5,7 @@ These steps create and bind the email-forwarding Worker using the Cloudflare das
 ## Prerequisites
 - Domain `intexdrywall.com` managed in Cloudflare.
 - Email Routing enabled and destination `intexranch@gmail.com` VERIFIED.
-- The Worker code from `workers/invite-email-worker` (uses `cloudflare:email` + `mimetext`).
+- The Worker code from `workers/invite-email-worker` (uses `cloudflare:email`; no extra deps beyond wrangler).
 
 ## 1) Create the Worker
 1. Log in to Cloudflare Dashboard → “Workers & Pages” → “Create”.
