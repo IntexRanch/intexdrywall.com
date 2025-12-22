@@ -138,20 +138,3 @@ export default {
     }
   }
 };
-{
-  "name": "invite-email-worker",
-  "version": "0.0.1",
-  "private": true,
-  "type": "module",
-  "main": "src/index.js",
-  "scripts": {
-    "dev": "wrangler dev src/index.js",
-    "deploy": "wrangler deploy src/index.js"
-  },
-  "dependencies": {
-    "mimetext": "^1.2.4"
-  },
-  "devDependencies": {
-    "wrangler": "^3.87.0"
-  }
-}
