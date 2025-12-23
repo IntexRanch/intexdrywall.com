@@ -22,17 +22,22 @@ const navItems = [
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const isHome = pathname === "/";
 
   return (
     <header className="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-[520px]">
+      <div
+        className={`mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex items-center justify-between ${
+          isHome ? "h-[520px]" : "h-16"
+        }`}
+      >
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/mainlogo.png"
             alt="Intex Drywall Logo"
-            width={1800}
-            height={600}
-            className="h-[480px] w-auto"
+            width={isHome ? 1800 : 180}
+            height={isHome ? 600 : 60}
+            className={isHome ? "h-[480px] w-auto" : "h-12 w-auto"}
             priority
           />
         </Link>
