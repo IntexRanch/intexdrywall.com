@@ -16,9 +16,17 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Intex Drywall. All rights reserved.
           </p>
         </div>
-        <p className="text-xs">
-          Commercial drywall &amp; metal stud framing contractors.
-        </p>
+        <div className="flex flex-col items-center sm:items-end gap-1 text-xs">
+          <p>Commercial drywall &amp; metal stud framing contractors.</p>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
+            <a href="mailto:info@#intexdrywall.com" className="hover:text-slate-700">
+              Email: info@#intexdrywall.com
+            </a>
+            <a href="tel:19193910325" className="hover:text-slate-700">
+              Phone: 919 391-0325
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   );
