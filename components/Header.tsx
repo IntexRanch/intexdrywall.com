@@ -25,14 +25,14 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-[520px]">
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/mainlogo.png"
             alt="Intex Drywall Logo"
-            width={180}
-            height={60}
-            className="h-12 w-auto"
+            width={1800}
+            height={600}
+            className="h-[480px] w-auto"
             priority
           />
         </Link>
