@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { ButtonLink } from "./Button";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -42,25 +43,28 @@ export function Header() {
           />
         </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-          {navItems.map((item) => {
-            const active = pathname === item.href;
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={
-                  active
-                    ? "text-slate-900 border-b-2 border-slate-900 pb-1"
-                    : "text-slate-600 hover:text-slate-900"
-                }
-              >
-                {item.label}
-              </Link>
-            );
-          })}
-        </nav>
+        {/* Desktop nav + CTA */}
+        <div className="hidden md:flex items-center gap-6">
+          <nav className="flex items-center gap-6 text-sm font-medium">
+            {navItems.map((item) => {
+              const active = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={
+                    active
+                      ? "text-slate-900 border-b-2 border-slate-900 pb-1"
+                      : "text-slate-600 hover:text-slate-900"
+                  }
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+          </nav>
+          <ButtonLink href="/invite-to-bid">Contact Me</ButtonLink>
+        </div>
 
         {/* Mobile menu button */}
         <button
@@ -93,6 +97,13 @@ export function Header() {
                 </Link>
               );
             })}
+            <Link
+              href="/invite-to-bid"
+              className="text-slate-900 font-semibold"
+              onClick={() => setOpen(false)}
+            >
+              Contact Me
+            </Link>
           </div>
         </nav>
       )}

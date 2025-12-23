@@ -64,7 +64,7 @@ export default function HomePage() {
           <div className="max-w-3xl space-y-5 sm:space-y-6">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
               <span className="block">Intex Drywall</span>
-              <span className="block text-2xl sm:text-3xl md:text-4xl font-medium text-slate-100">
+              <span className="block mt-2 text-2xl sm:text-3xl md:text-4xl font-medium text-slate-100">
                 Drywall and Framing Contractors for both Commercial and
                 Residential Projects
               </span>
