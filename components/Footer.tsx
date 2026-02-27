@@ -8,9 +8,9 @@ export function Footer() {
           <Image
             src="/mainlogo.png"
             alt="Intex Drywall Logo"
-            width={110}
-            height={37}
-            className="h-8 w-auto"
+            width={55}
+            height={19}
+            className="h-4 w-auto"
           />
           <p>
             &copy; {new Date().getFullYear()} Intex Drywall. All rights reserved.
@@ -22,8 +22,8 @@ export function Footer() {
             <a href="mailto:info@#intexdrywall.com" className="hover:text-slate-700">
               Email: info@#intexdrywall.com
             </a>
-            <a href="tel:19193910325" className="hover:text-slate-700">
-              Phone: 919 391-0325
+            <a href="tel:9194640185" className="hover:text-slate-700">
+              Phone: 919 464 0185
             </a>
           </div>
         </div>

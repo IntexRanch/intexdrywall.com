@@ -33,9 +33,9 @@ export function Header() {
             <Image
               src="/mainlogo.png"
               alt="Intex Drywall Logo"
-              width={isHome ? 1800 : 180}
-              height={isHome ? 600 : 60}
-              className={isHome ? "h-[480px] w-auto" : "h-12 w-auto"}
+              width={isHome ? 900 : 90}
+              height={isHome ? 300 : 30}
+              className={isHome ? "h-[240px] w-auto" : "h-6 w-auto"}
               priority
             />
           </Link>
