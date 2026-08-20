@@ -46,7 +46,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               url: "https://intexdrywalls.com",
               logo: "https://intexdrywalls.com/mainlogo.png",
               image: "https://intexdrywalls.com/mainlogo.png",
-              telephone: "(919) 391-0325",
+              telephone: "919 341-9259",
               areaServed: [
                 "Raleigh",
                 "Durham",

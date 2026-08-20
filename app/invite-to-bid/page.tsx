@@ -32,10 +32,10 @@ export default function InviteToBidPage() {
                 Prefer to email us directly? Send your plans and specs to:
               </p>
               <p className="mt-2 font-medium text-slate-900">
-                gdelgado@intexdrywalls.com
+                intexranch@gmail.com
               </p>
               <p className="mt-1">
-                Office: <span className="font-medium">(919) 391-0325</span>
+                Office: <span className="font-medium">919 341-9259</span>
               </p>
             </div>
 

@@ -19,11 +19,11 @@ export function Footer() {
         <div className="flex flex-col items-center sm:items-end gap-1 text-xs">
           <p>Commercial drywall &amp; metal stud framing contractors.</p>
           <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
-            <a href="mailto:info@#intexdrywall.com" className="hover:text-slate-700">
-              Email: info@#intexdrywall.com
+            <a href="mailto:intexranch@gmail.com" className="hover:text-slate-700">
+              Email: intexranch@gmail.com
             </a>
-            <a href="tel:9194640185" className="hover:text-slate-700">
-              Phone: 919 464 0185
+            <a href="tel:9193419259" className="hover:text-slate-700">
+              Phone: 919 341-9259
             </a>
           </div>
         </div>
